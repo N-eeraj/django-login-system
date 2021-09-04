@@ -1,6 +1,8 @@
+from os import name
 from django.http import request
 from django.http.response import HttpResponse
 from django.shortcuts import render
+from .models import LoginTable
 
 # Create your views here.
 def login(request):
@@ -9,14 +11,20 @@ def login(request):
 def sign_in(request):
     mail = request.POST['mail']
     pswd = request.POST['pswd']
-    return HttpResponse('<h1>Login Success</h1>')
+    name = 'Name'
+    return render(request, 'home.html', {'name': name})
 
 def register(request):
     return render(request, 'register.html')
 
 def sign_up(request):
-    name = request.POST['name']
-    mail = request.POST['mail']
-    pswd1 = request.POST['pswd1']
-    pswd2 = request.POST['pswd2']
-    return HttpResponse('<h1>Registration Success</h1>')
+
+    new_user = LoginTable()
+
+    new_user.name = request.POST['name']
+    new_user.mail = request.POST['mail']
+    if request.POST['pswd1'] == request.POST['pswd2']:
+        new_user.password = request.POST['pswd1']
+        new_user.save()
+        return render(request, 'registration.html')
+    return HttpResponse('<h1>Passwords Not Matching</h1>')
