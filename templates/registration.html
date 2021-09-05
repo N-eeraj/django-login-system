@@ -7,6 +7,14 @@
     <title>Success</title>
 </head>
 <body>
-    <a href="..">Login</a> to continue.
+
+    <h1>{{heading}}</h1>
+    <hr>
+
+    {% if success %}
+        <a href="..">Login</a> to continue.
+    {% else %}
+        <a href="register">Go Back</a>
+    {% endif %}
 </body>
 </html>
