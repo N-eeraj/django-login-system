@@ -1,0 +1,13 @@
+form{
+    width: 30vw;
+    margin-top: 10vh;
+    margin-left: 35vw;
+    padding: 2.5% 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #07F;
+}
+form:hover{
+    border-color: blueviolet;
+}

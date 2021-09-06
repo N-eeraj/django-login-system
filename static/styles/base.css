@@ -9,8 +9,12 @@ body{
     background-color: rgb(175, 200, 255);
 }
 
+input{
+    margin: 5% 0;
+}
+
 .ipt{
-    padding: 0.5% 1.25%;
+    padding: 1% 2%;
     background-color: #FFF5;
     color: #037;
     border: 2px solid #07F;
@@ -23,21 +27,29 @@ body{
 .ipt:focus{
     background-color: #FAF5;
     color: #505;
-    border: 2px solid blueviolet;
+    border-color: blueviolet;
 }
 
 a{
+    margin-top: 3vh;
+    display: block;
     color: navy;
     font-weight: 700;
     font-size: large;
     text-decoration: none;
+    text-align: center;
 }
 a:hover{
     text-decoration: underline;
 }
 
+span{
+    display: block;
+    text-align: center;
+}
+
 .btn{
-    padding: 0.75% 1%;
+    padding: 1.5% 2%;
     background-color: blueviolet;
     color: white;
     font-weight: 600;
