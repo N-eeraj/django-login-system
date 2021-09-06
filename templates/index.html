@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <link rel="stylesheet" href="{% static 'styles/base.css' %}">
 </head>
 <body>
 
     
     <form action="sign_in" method="POST">
     {% csrf_token %}
-        <input type="email" name="mail" placeholder="Email" required>
-        <input type="password" name="pswd" placeholder="Password" required>
-        <input type="submit" value="Sign In">
+        <input type="email" name="mail" placeholder="Email" required class="ipt">
+        <input type="password" name="pswd" placeholder="Password" required class="ipt">
+        <input type="submit" value="Sign In" class="btn">
     </form>
 
     <a href="/register">Register</a>
