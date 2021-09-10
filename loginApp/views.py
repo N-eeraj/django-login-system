@@ -35,10 +35,13 @@ def sign_up(request):
     new_user.mail = request.POST['mail']
 
     if request.POST['pswd1'] == request.POST['pswd2']:
-        new_user.password = request.POST['pswd1']
-        new_user.save()
+        try:
+            new_user.password = request.POST['pswd1']
+            new_user.save()
 
-        h1 = 'Registration Successful'
-        success = True
+            h1 = 'Registration Successful'
+            success = True
+        except:
+            h1 = 'Email Already Used'
 
     return render(request, 'registration.html', {'heading': h1, 'success': success})
